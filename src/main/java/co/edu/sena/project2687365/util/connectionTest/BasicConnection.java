@@ -6,7 +6,7 @@ public class BasicConnection {
     public static void main(String[] args) {
         String url = "jdbc:mysql://localhost:3306/myApp?serverTimezone=America/Bogota";
         String userName = "root";
-        String password = "password09";
+        String password = "";
 
         String sql = null;
         Connection conn = null;

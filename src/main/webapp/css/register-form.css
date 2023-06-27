@@ -1,49 +1,142 @@
-html,
-body{
-    height: 100%;
+.logo-form{
+    display: flex;
+    width: 100vw;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
 }
 
-body{
+.container{
+    position: relative;
+    width: 350px;
+    height: 500px;
+    box-shadow: 0 0 10px #3ef3f9;
+    border-radius: 20px;
     display: flex;
-    flex-direction: column;
     justify-content: center;
     align-items: center;
-    padding-top: 40px;
-}
-.form-container{
-    padding: 20px;
+    padding-inline: 32px;
+    overflow: hidden;
 }
 
-.form{
+
+.image{
+    position: absolute;
+    inset: 2px;
+    background: #0c1022;
+    z-index: 1;
+    border-radius: 18px;
+}
+
+.form-box{
     display: flex;
-    flex-direction: column;
     justify-content: center;
-    border: 1px solid;
-    padding: 25px;
-    background-color: white;
+    align-items: center;
+    flex-direction: column;
+    transition: .5s ease;
 }
 
-.form-input{
-    padding-bottom: 20px;
+.form-box .form h2{
+    font-size: 32px;
+    color: white;
+    text-align: center;
 }
 
-.form input{
-    padding: 7px;
+.form .input-box{
+    position: relative;
+    margin: 30px 0;
+    width: 310px;
+    border-bottom: 2px solid #fff;
+}
+
+.input-box input{
     width: 100%;
+    height: 50px;
+    background: transparent;
+    border: none;
+    outline: none;
+    font-size: 16px;
+    padding: 0 35px 0 5px;
+    color: white;
 }
-.form button{
-    padding: 8px;
-    background-color: cornflowerblue;
+
+input:focus ~ label,
+input:valid ~ label{
+    top: -5px;
+}
+.input-box label{
+    position: absolute;
+    color: white;
+    top: 50%;
+    left: 5px;
+    transform: translateY(-50%);
+    font-size: 16px;
+    pointer-events: none;
+    transform: .3s;
+    transition: .5s ease;
+}
+
+.group{
+    display: flex;
+    justify-content: space-between;
+}
+
+.group a{
+    position: relative;
+    top: -20px;
+    color: white;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.group a:hover{
+    text-decoration: underline;
+}
+
+button{
+    height: 40px;
+    width: 140px;
     font-size: 15px;
-    border: 1px solid;
-    margin-bottom: 2px;
+    font-weight: 600;
     cursor: pointer;
+    outline: none;
+    border-radius: 5px;
+    background-color: #0c1022;
+    border: 2px solid #3ef3f9;
+    color: white;
+    transition: .5s ease;
 }
 
+button:hover{
+    background-color: #cfdddd;
+    border: 2px solid #cfdddd;
+    color: black;
+}
+
+
+.message .s1{
+    color: #c4cec0db;
+    font-size: 60px;
+    font-weight: 500;
+}
+
+.message .s2{
+    color: #3ef3f9;
+    font-size: 45px;
+    text-decoration: underline 5px;
+    font-weight: 500;
+    margin-left: 20px;
+}
+
+.message span{
+    text-shadow: 0px 0px 5px,
+    0 0 0px,
+    0 0 40px,
+    0 0 100px;
+}
 p{
-    font-family: Calibri;
+    position: absolute;
+    bottom: 5px;
+    color: white;
 }
 
-.form button:hover{
-    background-color: #7499e1;
-}

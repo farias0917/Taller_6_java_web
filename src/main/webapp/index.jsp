@@ -1,58 +1,50 @@
+<%@include file="nav.jsp"%>
 <%@ page import="java.text.SimpleDateFormat" %>
 <%@ page import="java.util.Calendar" %>
 <%@ page import="java.util.Date" %>
 <%@ page contentType="text/html; charset=UTF-8" pageEncoding="UTF-8" %>
-<!DOCTYPE html>
-<html>
-<html lang="es">
 <head>
-    <meta charset="utf-8">
-    <meta name="author" content="Emanuel">
-    <meta name="description" content="formulario de registro APLICACION">
-    <meta name="keywords" content="registro,creacion de cuenta de usuario">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>Register form</title>
-    <link rel="icon" type="image/x-icon" href="img/logo.png">
-    <!-- Latest compiled and minified CSS -->
-
-    <link rel="stylesheet" href="css/style.css">
-    <link rel="stylesheet" href="css/register-form.css">
+    <title>Registrarse</title>
 </head>
-<body>
-<img src="img/logo.png" width="150px">
-      <main class="form-container">
-          <form class="form" action="#" method="post">
-              <h3>APLICACIÓN</h3>
-              <h1>Registrarse</h1>
+<main class="logo-form">
+    <div class="message">
+        <img src="img/juego.png" alt="logo" width="200px">
+        <h1><span class="s1">My</span> <span class="s2">APP</span></h1>
+    </div>
+    <div class="container">
+        <div class="image">
+            <div class="form-box">
+                <form action="registerForm" method="post" class="form">
+                    <h2>Registrate</h2>
+                    <div class="input-box">
+                        <input type="text" id="user_firstname" name="user_firstname" autofocus required pattern="[A-Za-z ]{2,40}">
+                        <label for="user_firstname">Nombre:</label>
+                    </div>
 
-              <div class="form-input">
-                  <label for="name">Nombre</label>
-                  <input type="text" id="name" placeholder="Ingrese su Nombre" name="name" autofocus required pattern="[A-Za-z ]{2,40}">
-              </div>
+                    <div class="input-box">
+                        <input type="text"  id="user_lastname" name="user_lastname" required pattern="[A-Za-z ]{2,40}">
+                        <label for="user_lastname">Apellido</label>
+                    </div>
 
-              <div class="form-input">
-                  <label for="lastName">Apellido</label>
-                  <input type="text"  id="LastName" placeholder="Ingrese su Apellido" name="LastName" required pattern="[A-Za-z ]{2,40}">
-              </div>
+                    <div class="input-box">
+                        <input type="email"  id="user_email" name="user_email" required pattern="{60}">
+                        <label for="user_email">Correo:</label>
+                    </div>
 
-              <div class="form-input">
-                  <label for="email">Correo:</label><br>
-                  <input type="email"  id="email" placeholder="Ingrese su Correo" name="email" required pattern="{60}">
-              </div>
-
-
-              <div class="form-input">
-                  <label for="password">Contraseña:</label><br>
-                  <input type="password"  id="password" placeholder="Ingrese su contaseña" name="password" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,16}$">
-              </div>
-
-
-              <button type="submit">Ingresar</button>
-              <div class="register">
-                  <a href="registerForm.jsp">Iniciar sesión</a>
-              </div>
-          </form>
-      </main>
+                    <div class="input-box">
+                        <input type="password"  id="user_password" name="user_password" required pattern="^(?=.*\d)(?=.*[a-z])(?=.*[A-Z]).{8,16}$">
+                        <label for="user_password">Contraseña:</label>
+                    </div>
+                    <div class="group">
+                        <a href="#"><input type="checkbox" name="" id="" required>Terminos y condiciones</a>
+                        <a href="registerForm.jsp">Iniciar sesión</a>
+                    </div>
+                    <button type="submit">Registrarse</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</main>
 
 <p class="copyR">Todos los derechos reservados APLICACIÓN
     ©<%=displayDate()%></p>
@@ -65,5 +57,3 @@ public String displayDate(){
     return dateFormat.format(date);
 }
 %>
-</body>
-</html>
